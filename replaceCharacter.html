@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuck Brad</title>
+</head>
+<body>
+
+    <div class="margin">
+        <h1 class="text">Input Text:</h1>
+        <textarea class="textBox" id="wordList"></textarea>
+        <p></p>
+        <span class="text"> Character: <input type="text" id="initialChar"> New Character: <input type="text" id="newChar"> <input type="submit" value="Replace All" onclick="replace();"> </span>
+        <p id="newText" class="text"></p>
+    </div>
+
+    <script>
+        function replace() {
+            initialChar = document.getElementById('initialChar').value;
+            newChar = document.getElementById('newChar').value;
+            wordList = document.getElementById('wordList').value;
+            
+            initChar = new RegExp(initialChar, 'g');
+            newWordList = wordList.replace(initChar,newChar);
+            
+            document.getElementById('newText').innerHTML = newWordList;
+        }
+
+    </script>
+
+    <style>
+        body,html
+        {
+            margin: 0;
+            background-color: white;
+        }
+
+        .margin
+        {
+            margin-left: 8%;
+            width: 84%;
+        }
+
+        .textBox
+        {
+            width: 100%;
+            height: 200px;
+        }
+
+        .text
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+    </style>
+    
+</body>
+</html>
